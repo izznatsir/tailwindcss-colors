@@ -1,0 +1,6 @@
+**/pnpm-lock.yaml
+
+# .gitignore
+**/.cache
+**/dist
+**/node_modules

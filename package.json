@@ -1,0 +1,29 @@
+{
+	"name": "tailwindcss-color-variables",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"format": "prettier -uw .",
+		"prepare": "husky install"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@radix-ui/colors": "^3.0.0",
+		"colortranslator": "^4.1.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^15.2.0",
+		"pkgroll": "^2.0.1",
+		"prettier": "^3.2.1",
+		"tailwindcss": "^3.4.1",
+		"tsx": "^4.7.0",
+		"typescript": "^5.3.3"
+	},
+	"lint-staged": {
+		"*": [
+			"prettier -uw"
+		]
+	}
+}

@@ -19,7 +19,7 @@ Update your `tailwind.config.js` to use the variables:
 
 ```javascript
 /**
- * file: .tailwind.config.js
+ * file: ./tailwind.config.js
  */
 
 import { gray } from "@izznatsir/tailwindcss-colors/radix";

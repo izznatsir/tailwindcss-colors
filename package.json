@@ -2,6 +2,15 @@
 	"name": "tailwindcss-color-variables",
 	"version": "0.1.0",
 	"description": "CSS color variables that are compatible with Tailwind CSS color opacity syntax.",
+	"keywords": [
+		"colors",
+		"css",
+		"variables",
+		"radix-ui",
+		"tailwindcss"
+	],
+	"author": "Izzuddin Natsir",
+	"license": "ISC",
 	"exports": {
 		".": {
 			"types": "./dist/tailwind.d.ts",
@@ -22,11 +31,10 @@
 	"scripts": {
 		"build": "tsx ./scripts/generate.ts",
 		"format": "prettier -uw .",
-		"prepare": "husky install"
+		"prepack": "pnpm run build",
+		"prepare": "husky install",
+		"publish": "pnpm publish --access public"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
 	"devDependencies": {
 		"@radix-ui/colors": "^3.0.0",
 		"@types/node": "^20.11.0",

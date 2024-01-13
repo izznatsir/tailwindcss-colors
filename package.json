@@ -1,6 +1,6 @@
 {
 	"name": "@izznatsir/tailwindcss-colors",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "CSS color variables that are compatible with Tailwind CSS color opacity syntax.",
 	"keywords": [
 		"colors",

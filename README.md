@@ -11,8 +11,8 @@ Import CSS variables of the colors that you want. If you are using Vite:
  * file: ./src/main.js
  */
 
-import "tailwindcss-color-variables/radix/gray.css";
-import "tailwindcss-color-variables/tailwind/sky.css";
+import "@izznatsir/tailwindcss-colors/radix/gray.css";
+import "@izznatsir/tailwindcss-colors/tailwind/sky.css";
 ```
 
 Update your `tailwind.config.js` to use the variables:
@@ -22,8 +22,8 @@ Update your `tailwind.config.js` to use the variables:
  * file: .tailwind.config.js
  */
 
-import { gray } from "tailwindcss-color-variables/radix";
-import { sky } from "tailwindcss-color-variables/tailwind";
+import { gray } from "@izznatsir/tailwindcss-colors/radix";
+import { sky } from "@izznatsir/tailwindcss-colors/tailwind";
 
 export default {
   ...

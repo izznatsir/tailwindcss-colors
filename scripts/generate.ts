@@ -40,9 +40,6 @@ function generateTailwindColorVariables() {
 	for (const color in singleScaleColors) {
 		let css = ``;
 
-		css += `:root {\n`;
-		css += `\t/* ${color} */\n`;
-
 		const colorValue =
 			singleScaleColors[color as keyof typeof singleScaleColors];
 		const translator = new ColorTranslator(colorValue);
@@ -51,6 +48,7 @@ function generateTailwindColorVariables() {
 		js += `export const ${color} = "hsl(${variableValue} / <alpha-value>)";\n`;
 		dts += `declare const ${color}: "hsl(${variableValue} / <alpha-value>)";\n`;
 
+		css += `:root {\n`;
 		css += `\t--color-${color}: ${variableValue};\n`;
 		css += `}\n`;
 
@@ -68,9 +66,7 @@ function generateTailwindColorVariables() {
 
 		js += `export const ${color} = {\n`;
 		dts += `declare const ${color}: {\n`;
-
 		css += `:root {\n`;
-		css += `\t/* ${color} */\n`;
 
 		for (const scale in colorValue) {
 			const scaleValue = colorValue[scale as keyof typeof colorValue];
@@ -80,13 +76,11 @@ function generateTailwindColorVariables() {
 
 			js += `\t${scale}: "hsl(var(${variableName}) / <alpha-value>)",\n`;
 			dts += `\treadonly ${scale}: "hsl(var(${variableName}) / <alpha-value>)",\n`;
-
 			css += `\t${variableName}: ${variableValue};\n`;
 		}
 
 		js += `};\n`;
 		dts += `};\n`;
-
 		css += `}\n`;
 
 		writeFileSync({
@@ -131,7 +125,6 @@ function generateRadixColorVariables() {
 		} else {
 			css += `:root.dark {\n`;
 		}
-		css += `\t/* ${colorWithDark} */\n`;
 
 		for (let colorWithScale in colorValue) {
 			const scale = colorWithScale.replace(color, "");

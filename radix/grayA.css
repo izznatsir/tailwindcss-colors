@@ -1,0 +1,28 @@
+:root {
+	--color-grayA-1: 0deg 0% 0% / 0.011765;
+	--color-grayA-2: 0deg 0% 0% / 0.023529;
+	--color-grayA-3: 0deg 0% 0% / 0.058824;
+	--color-grayA-4: 0deg 0% 0% / 0.090196;
+	--color-grayA-5: 0deg 0% 0% / 0.121569;
+	--color-grayA-6: 0deg 0% 0% / 0.14902;
+	--color-grayA-7: 0deg 0% 0% / 0.192157;
+	--color-grayA-8: 0deg 0% 0% / 0.266667;
+	--color-grayA-9: 0deg 0% 0% / 0.447059;
+	--color-grayA-10: 0deg 0% 0% / 0.486275;
+	--color-grayA-11: 0deg 0% 0% / 0.607843;
+	--color-grayA-12: 0deg 0% 0% / 0.87451;
+}
+:root.dark {
+	--color-grayA-1: 0deg 0% 0% / 0;
+	--color-grayA-2: 0deg 0% 100% / 0.035294;
+	--color-grayA-3: 0deg 0% 100% / 0.070588;
+	--color-grayA-4: 0deg 0% 100% / 0.105882;
+	--color-grayA-5: 0deg 0% 100% / 0.133333;
+	--color-grayA-6: 0deg 0% 100% / 0.172549;
+	--color-grayA-7: 0deg 0% 100% / 0.231373;
+	--color-grayA-8: 0deg 0% 100% / 0.333333;
+	--color-grayA-9: 0deg 0% 100% / 0.392157;
+	--color-grayA-10: 0deg 0% 100% / 0.447059;
+	--color-grayA-11: 0deg 0% 100% / 0.686275;
+	--color-grayA-12: 0deg 0% 100% / 0.929412;
+}

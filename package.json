@@ -1,6 +1,6 @@
 {
 	"name": "@izznatsir/tailwindcss-colors",
-	"version": "0.1.5",
+	"version": "0.2.0",
 	"description": "CSS color variables that are compatible with Tailwind CSS color opacity syntax.",
 	"keywords": [
 		"colors",
@@ -14,25 +14,6 @@
 		"url": "https://github.com/izznatsir/tailwindcss-colors"
 	},
 	"license": "ISC",
-	"exports": {
-		"./radix": {
-			"types": "./dist/radix.d.ts",
-			"import": "./dist/radix.js"
-		},
-		"./radix/*.css": {
-			"import": "./dist/radix/*.css"
-		},
-		"./tailwind": {
-			"types": "./dist/tailwind.d.ts",
-			"import": "./dist/tailwind.js"
-		},
-		"./tailwind/*.css": {
-			"import": "./dist/tailwind/*.css"
-		}
-	},
-	"files": [
-		"dist"
-	],
 	"type": "module",
 	"scripts": {
 		"build": "tsx ./scripts/generate.ts",

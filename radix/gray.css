@@ -1,0 +1,28 @@
+:root {
+	--color-gray-1: 0deg 0% 98.823529%;
+	--color-gray-2: 0deg 0% 97.647059%;
+	--color-gray-3: 0deg 0% 94.117647%;
+	--color-gray-4: 0deg 0% 90.980392%;
+	--color-gray-5: 0deg 0% 87.843137%;
+	--color-gray-6: 0deg 0% 85.098039%;
+	--color-gray-7: 0deg 0% 80.784314%;
+	--color-gray-8: 0deg 0% 73.333333%;
+	--color-gray-9: 0deg 0% 55.294118%;
+	--color-gray-10: 0deg 0% 51.372549%;
+	--color-gray-11: 0deg 0% 39.215686%;
+	--color-gray-12: 0deg 0% 12.54902%;
+}
+:root.dark {
+	--color-gray-1: 0deg 0% 6.666667%;
+	--color-gray-2: 0deg 0% 9.803922%;
+	--color-gray-3: 0deg 0% 13.333333%;
+	--color-gray-4: 0deg 0% 16.470588%;
+	--color-gray-5: 0deg 0% 19.215686%;
+	--color-gray-6: 0deg 0% 22.745098%;
+	--color-gray-7: 0deg 0% 28.235294%;
+	--color-gray-8: 0deg 0% 37.647059%;
+	--color-gray-9: 0deg 0% 43.137255%;
+	--color-gray-10: 0deg 0% 48.235294%;
+	--color-gray-11: 0deg 0% 70.588235%;
+	--color-gray-12: 0deg 0% 93.333333%;
+}

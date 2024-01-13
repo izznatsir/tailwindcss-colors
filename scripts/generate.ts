@@ -33,11 +33,15 @@ function generateTailwindColorVariables() {
 	} = tailwindColors;
 	const singleScaleColors = { black, white };
 
+	const exportedColors = [];
+
 	let js = ``;
 	let dts = ``;
 
 	// Append single scale color variables.
 	for (const color in singleScaleColors) {
+		exportedColors.push(color);
+
 		let css = ``;
 
 		const colorValue =
@@ -54,12 +58,14 @@ function generateTailwindColorVariables() {
 
 		writeFileSync({
 			content: css,
-			relativePath: `./dist/css/tailwind/${color}.css`,
+			relativePath: `./tailwind/${color}.css`,
 		});
 	}
 
 	// Append color variables.
 	for (const color in colors) {
+		exportedColors.push(color);
+
 		const colorValue = colors[color as keyof typeof colors];
 
 		let css = ``;
@@ -85,12 +91,14 @@ function generateTailwindColorVariables() {
 
 		writeFileSync({
 			content: css,
-			relativePath: `./dist/css/tailwind/${color}.css`,
+			relativePath: `./tailwind/${color}.css`,
 		});
 	}
 
-	writeFileSync({ content: js, relativePath: "./dist/tailwind.js" });
-	writeFileSync({ content: dts, relativePath: "./dist/tailwind.d.ts" });
+	dts += `export { ${exportedColors.join(", ")} };`;
+
+	writeFileSync({ content: js, relativePath: "./tailwind.js" });
+	writeFileSync({ content: dts, relativePath: "./tailwind.d.ts" });
 }
 
 /**
@@ -102,11 +110,14 @@ function generateRadixColorVariables() {
 	let js = ``;
 	let dts = ``;
 
+	const exportedColors = [];
+
 	// Append color variables.
 	for (const colorWithDark in colors) {
 		if (/P3A?$/.test(colorWithDark)) continue;
 
 		const color = colorWithDark.replace("Dark", "");
+		exportedColors.push(color);
 
 		const isDark = /DarkA?$/.test(colorWithDark);
 		const isAlpha = /A$/.test(color);
@@ -154,13 +165,15 @@ function generateRadixColorVariables() {
 
 		writeFileSync({
 			content: css,
-			relativePath: `./dist/css/radix/${color}.css`,
+			relativePath: `./radix/${color}.css`,
 			mode: !isDark ? "write" : "append",
 		});
 	}
 
-	writeFileSync({ content: js, relativePath: "./dist/radix.js" });
-	writeFileSync({ content: dts, relativePath: "./dist/radix.d.ts" });
+	dts += `export { ${exportedColors.join(", ")} };`;
+
+	writeFileSync({ content: js, relativePath: "./radix.js" });
+	writeFileSync({ content: dts, relativePath: "./radix.d.ts" });
 }
 
 /**

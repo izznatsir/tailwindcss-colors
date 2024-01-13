@@ -1,0 +1,28 @@
+:root {
+	--color-orange-1: 20deg 60% 99.019608%;
+	--color-orange-2: 33.333333deg 100% 96.470588%;
+	--color-orange-3: 36.585366deg 100% 91.960784%;
+	--color-orange-4: 34.054054deg 100% 85.490196%;
+	--color-orange-5: 32.673267deg 100% 80.196078%;
+	--color-orange-6: 30.24deg 100% 75.490196%;
+	--color-orange-7: 27.230769deg 86.666667% 70.588235%;
+	--color-orange-8: 25.033113deg 79.89418% 62.941176%;
+	--color-orange-9: 22.831858deg 93.38843% 52.54902%;
+	--color-orange-10: 23.849372deg 100% 46.862745%;
+	--color-orange-11: 22.941176deg 100% 40%;
+	--color-orange-12: 16.271186deg 50.42735% 22.941176%;
+}
+:root.dark {
+	--color-orange-1: 26.666667deg 24.324324% 7.254902%;
+	--color-orange-2: 28deg 33.333333% 8.823529%;
+	--color-orange-3: 28.5deg 64.516129% 12.156863%;
+	--color-orange-4: 28.285714deg 100% 13.72549%;
+	--color-orange-5: 27.906977deg 100% 16.862745%;
+	--color-orange-6: 27.333333deg 78.947368% 22.352941%;
+	--color-orange-7: 24.742268deg 62.580645% 30.392157%;
+	--color-orange-8: 23.114754deg 59.803922% 40%;
+	--color-orange-9: 22.831858deg 93.38843% 52.54902%;
+	--color-orange-10: 25.982143deg 100% 56.078431%;
+	--color-orange-11: 26.071429deg 100% 67.058824%;
+	--color-orange-12: 29.508197deg 100% 88.039216%;
+}

@@ -1,0 +1,28 @@
+:root {
+	--color-bronze-1: 0deg 20% 99.019608%;
+	--color-bronze-2: 15deg 66.666667% 97.647059%;
+	--color-bronze-3: 15deg 40% 94.117647%;
+	--color-bronze-4: 18.75deg 33.333333% 90.588235%;
+	--color-bronze-5: 18deg 29.411765% 86.666667%;
+	--color-bronze-6: 18.461538deg 28.888889% 82.352941%;
+	--color-bronze-7: 16.875deg 26.666667% 76.470588%;
+	--color-bronze-8: 16.097561deg 25.153374% 68.039216%;
+	--color-bronze-9: 17.87234deg 20% 53.921569%;
+	--color-bronze-10: 16deg 17.786561% 49.607843%;
+	--color-bronze-11: 14.634146deg 19.617225% 40.980392%;
+	--color-bronze-12: 12.5deg 21.818182% 21.568627%;
+}
+:root.dark {
+	--color-bronze-1: 15deg 11.111111% 7.058824%;
+	--color-bronze-2: 24deg 9.803922% 10%;
+	--color-bronze-3: 20deg 8.571429% 13.72549%;
+	--color-bronze-4: 20deg 10.344828% 17.058824%;
+	--color-bronze-5: 16.363636deg 10.280374% 20.980392%;
+	--color-bronze-6: 16deg 11.450382% 25.686275%;
+	--color-bronze-7: 15.789474deg 11.801242% 31.568627%;
+	--color-bronze-8: 18.26087deg 11.557789% 39.019608%;
+	--color-bronze-9: 17.87234deg 20% 53.921569%;
+	--color-bronze-10: 17.5deg 22.857143% 58.823529%;
+	--color-bronze-11: 17.87234deg 35.338346% 73.921569%;
+	--color-bronze-12: 21deg 35.714286% 89.019608%;
+}

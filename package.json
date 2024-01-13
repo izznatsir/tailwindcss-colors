@@ -12,16 +12,19 @@
 	"author": "Izzuddin Natsir",
 	"license": "ISC",
 	"exports": {
-		".": {
-			"types": "./dist/tailwind.d.ts",
-			"import": "./dist/tailwind.js"
-		},
 		"./radix": {
 			"types": "./dist/radix.d.ts",
 			"import": "./dist/radix.js"
 		},
-		"./css/*.css": {
-			"import": "./dist/*.css"
+		"./radix/*.css": {
+			"import": "./dist/radix/*.css"
+		},
+		"./tailwind": {
+			"types": "./dist/tailwind.d.ts",
+			"import": "./dist/tailwind.js"
+		},
+		"./tailwind/*.css": {
+			"import": "./dist/tailwind/*.css"
 		}
 	},
 	"files": [

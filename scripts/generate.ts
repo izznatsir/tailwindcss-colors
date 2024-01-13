@@ -151,7 +151,7 @@ function generateRadixColorVariables() {
 				js += `\t${scale}: "hsl(var(${variableName})`;
 				js += isAlpha ? `)",\n` : ` / <alpha-value>)",\n`;
 
-				dts += `\treadonly${scale}: "hsl(var(${variableName})`;
+				dts += `\treadonly ${scale}: "hsl(var(${variableName})`;
 				dts += isAlpha ? `)",\n` : ` / <alpha-value>)",\n`;
 			}
 			css += `\t${variableName}: ${variableValue};\n`;

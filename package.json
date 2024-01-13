@@ -1,6 +1,6 @@
 {
 	"name": "@izznatsir/tailwindcss-colors",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "CSS color variables that are compatible with Tailwind CSS color opacity syntax.",
 	"keywords": [
 		"colors",
@@ -18,7 +18,6 @@
 	"scripts": {
 		"build": "tsx ./scripts/generate.ts",
 		"format": "prettier -uw .",
-		"prepack": "pnpm run build",
 		"prepare": "husky install"
 	},
 	"devDependencies": {

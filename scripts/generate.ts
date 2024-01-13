@@ -33,13 +33,12 @@ function generateTailwindColorVariables() {
 	} = tailwindColors;
 	const singleScaleColors = { black, white };
 
-	let ts = ``;
+	let js = ``;
+	let dts = ``;
 
 	// Append single scale color variables.
 	for (const color in singleScaleColors) {
 		let css = ``;
-
-		ts += `/** ${color} */\n`;
 
 		css += `:root {\n`;
 		css += `\t/* ${color} */\n`;
@@ -49,7 +48,8 @@ function generateTailwindColorVariables() {
 		const translator = new ColorTranslator(colorValue);
 		const variableValue = `${translator.H}deg ${translator.S}% ${translator.L}%`;
 
-		ts += `export const ${color} = "hsl(${variableValue} / <alpha-value>)" as const;\n`;
+		js += `export const ${color} = "hsl(${variableValue} / <alpha-value>)";\n`;
+		dts += `declare const ${color}: "hsl(${variableValue} / <alpha-value>)";\n`;
 
 		css += `\t--color-${color}: ${variableValue};\n`;
 		css += `}\n`;
@@ -66,8 +66,8 @@ function generateTailwindColorVariables() {
 
 		let css = ``;
 
-		ts += `/** ${color} */\n`;
-		ts += `export const ${color} = {\n`;
+		js += `export const ${color} = {\n`;
+		dts += `declare const ${color}: {\n`;
 
 		css += `:root {\n`;
 		css += `\t/* ${color} */\n`;
@@ -78,11 +78,15 @@ function generateTailwindColorVariables() {
 			const variableName = `--color-${color}-${scale}`;
 			const variableValue = `${translator.H}deg ${translator.S}% ${translator.L}%`;
 
-			ts += `\t${scale}: "hsl(var(${variableName}) / <alpha-value>)",\n`;
+			js += `\t${scale}: "hsl(var(${variableName}) / <alpha-value>)",\n`;
+			dts += `\treadonly ${scale}: "hsl(var(${variableName}) / <alpha-value>)",\n`;
+
 			css += `\t${variableName}: ${variableValue};\n`;
 		}
 
-		ts += `} as const;\n`;
+		js += `};\n`;
+		dts += `};\n`;
+
 		css += `}\n`;
 
 		writeFileSync({
@@ -91,7 +95,8 @@ function generateTailwindColorVariables() {
 		});
 	}
 
-	writeFileSync({ content: ts, relativePath: "./src/tailwind.ts" });
+	writeFileSync({ content: js, relativePath: "./dist/tailwind.js" });
+	writeFileSync({ content: dts, relativePath: "./dist/tailwind.d.ts" });
 }
 
 /**
@@ -100,7 +105,8 @@ function generateTailwindColorVariables() {
 function generateRadixColorVariables() {
 	const colors = radixColors;
 
-	let ts = ``;
+	let js = ``;
+	let dts = ``;
 
 	// Append color variables.
 	for (const colorWithDark in colors) {
@@ -116,8 +122,8 @@ function generateRadixColorVariables() {
 		let css = ``;
 
 		if (!isDark) {
-			ts += `/** ${color} */\n`;
-			ts += `export const ${color} = {\n`;
+			js += `export const ${color} = {\n`;
+			dts += `declare const ${color}: {\n`;
 		}
 
 		if (!isDark) {
@@ -138,14 +144,18 @@ function generateRadixColorVariables() {
 			if (isAlpha) variableValue += ` / ${translator.A}`;
 
 			if (!isDark) {
-				ts += `\t${scale}: "hsl(var(${variableName})`;
-				ts += isAlpha ? `)",\n` : ` / <alpha-value>)",\n`;
+				js += `\t${scale}: "hsl(var(${variableName})`;
+				js += isAlpha ? `)",\n` : ` / <alpha-value>)",\n`;
+
+				dts += `\treadonly${scale}: "hsl(var(${variableName})`;
+				dts += isAlpha ? `)",\n` : ` / <alpha-value>)",\n`;
 			}
 			css += `\t${variableName}: ${variableValue};\n`;
 		}
 
 		if (!isDark) {
-			ts += `} as const;\n`;
+			js += `};\n`;
+			dts += `};\n`;
 		}
 		css += `}\n`;
 
@@ -156,7 +166,8 @@ function generateRadixColorVariables() {
 		});
 	}
 
-	writeFileSync({ content: ts, relativePath: "./src/radix.ts" });
+	writeFileSync({ content: js, relativePath: "./dist/radix.js" });
+	writeFileSync({ content: dts, relativePath: "./dist/radix.d.ts" });
 }
 
 /**

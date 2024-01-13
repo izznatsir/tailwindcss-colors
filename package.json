@@ -1,10 +1,26 @@
 {
 	"name": "tailwindcss-color-variables",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"version": "0.1.0",
+	"description": "CSS color variables that are compatible with Tailwind CSS color opacity syntax.",
+	"exports": {
+		".": {
+			"types": "./dist/tailwind.d.ts",
+			"import": "./dist/tailwind.js"
+		},
+		"./radix": {
+			"types": "./dist/radix.d.ts",
+			"import": "./dist/radix.js"
+		},
+		"./css/*.css": {
+			"import": "./dist/*.css"
+		}
+	},
+	"files": [
+		"dist"
+	],
 	"type": "module",
 	"scripts": {
+		"build": "tsx ./scripts/generate.ts",
 		"format": "prettier -uw .",
 		"prepare": "husky install"
 	},
@@ -17,7 +33,6 @@
 		"colortranslator": "^4.1.0",
 		"husky": "^8.0.0",
 		"lint-staged": "^15.2.0",
-		"pkgroll": "^2.0.1",
 		"prettier": "^3.2.1",
 		"tailwindcss": "^3.4.1",
 		"tsx": "^4.7.0",

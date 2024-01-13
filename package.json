@@ -18,7 +18,7 @@
 	"scripts": {
 		"build": "tsx ./scripts/generate.ts",
 		"format": "prettier -uw .",
-		"prepack": "pnpm run build",
+		"prepack": "pnpm run build && pnpm run format",
 		"prepare": "husky install"
 	},
 	"devDependencies": {
